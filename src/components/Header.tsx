@@ -2,8 +2,6 @@ import { SafeImage } from './SafeImage'
 import { scrollTo } from '../utils'
 import styles from './Header.module.css'
 
-const SALON_NAME = 'Be-Luce Beauty Studio'
-
 export function Header() {
   return (
     <header className={styles.header}>
@@ -11,16 +9,19 @@ export function Header() {
         <div className={styles.brand}>
           <SafeImage
             src="assets/logo.png"
-            alt={SALON_NAME}
+            alt="BE-LUCE Beauty Studio"
             className={styles.logo}
-            fallback={<span className={styles.name}>{SALON_NAME}</span>}
+            fallback={<span className={styles.logoFallback}>BL</span>}
           />
-          <span className={styles.location}>Montenero · Milano</span>
+          <div className={styles.text}>
+            <span className={styles.name}>BE-LUCE Beauty Studio</span>
+            <span className={styles.location}>Montenero · Milano</span>
+          </div>
         </div>
         <button
           type="button"
           className={`btn btn-primary btn-sm ${styles.cta}`}
-          onClick={() => scrollTo('booking-preview')}
+          onClick={() => scrollTo('booking')}
         >
           Prenota
         </button>

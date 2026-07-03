@@ -1,67 +1,43 @@
-import { SafeImage } from './SafeImage'
+import { GOOGLE_REVIEWS_URL } from '../utils'
 import styles from './Reviews.module.css'
 
-const reviews = [
+const highlights = [
   {
-    text: 'Precisi, professionali e gentilissimi.',
-    author: 'Laura M.',
-    stars: 5,
+    title: 'Precisione nei dettagli',
+    text: 'Manicure e pedicure curate, con attenzione al risultato finale.',
   },
   {
-    text: 'Manicure e pedicure perfette, torno sempre qui.',
-    author: 'Sara B.',
-    stars: 5,
+    title: 'Ambiente pulito',
+    text: 'Strumenti igienizzati e servizio ordinato.',
   },
   {
-    text: 'Ambiente pulito, prezzi onesti e servizio veloce.',
-    author: 'Chiara R.',
-    stars: 5,
+    title: 'Gentilezza e disponibilità',
+    text: 'Staff rapido, disponibile e professionale.',
   },
 ]
-
-function MockGoogleSummary() {
-  return (
-    <div className={`card ${styles.mockSummary}`}>
-      <div className={styles.googleIcon}>G</div>
-      <div>
-        <p className={styles.summaryRating}>4,6 ★ · 48 recensioni Google</p>
-        <p className={styles.summarySub}>Be-Luce Beauty Studio · Montenero</p>
-      </div>
-    </div>
-  )
-}
 
 export function Reviews() {
   return (
     <section className="section">
-      <span className="section-label">Recensioni</span>
-      <h2 className="section-title">Clienti che tornano e lo raccontano</h2>
-      <p className={styles.followUp}>
-        Dopo ogni appuntamento, le clienti soddisfatte ricevono automaticamente il link per
-        lasciare una recensione.
+      <h2 className="section-title">Cosa apprezzano le clienti</h2>
+      <p className="section-subtitle">
+        Dalle recensioni pubbliche emergono cura, precisione e gentilezza.
       </p>
 
       <div className={styles.cards}>
-        {reviews.map((review) => (
-          <article key={review.author} className={`card ${styles.reviewCard}`}>
-            <div className={styles.stars}>
-              {'★'.repeat(review.stars)}
-              <span className={styles.starMuted}>{'★'.repeat(5 - review.stars)}</span>
-            </div>
-            <p className={styles.reviewText}>&ldquo;{review.text}&rdquo;</p>
-            <span className={styles.author}>— {review.author}</span>
+        {highlights.map((item) => (
+          <article key={item.title} className={`card ${styles.card}`}>
+            <h3 className={styles.cardTitle}>{item.title}</h3>
+            <p className={styles.cardText}>{item.text}</p>
           </article>
         ))}
       </div>
 
-      <div className={styles.previewWrap}>
-        <SafeImage
-          src="assets/reviews-screenshot.png"
-          alt="Anteprima recensioni Google"
-          className={styles.screenshot}
-          fallback={<MockGoogleSummary />}
-        />
-      </div>
+      <p className={styles.note}>Sintesi ispirata alle recensioni pubbliche su Google.</p>
+
+      <a href={GOOGLE_REVIEWS_URL} className={`btn btn-secondary btn-block ${styles.cta}`}>
+        Leggi le recensioni su Google
+      </a>
     </section>
   )
 }

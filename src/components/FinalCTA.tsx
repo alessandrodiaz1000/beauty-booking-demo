@@ -3,29 +3,23 @@ import styles from './FinalCTA.module.css'
 
 export function FinalCTA() {
   return (
-    <section className={`section ${styles.cta}`} id="final-cta">
+    <section className={`section ${styles.cta}`}>
       <div className={`card ${styles.card}`}>
-        <h2 className={styles.headline}>Vuoi provarlo per 30 giorni?</h2>
+        <h2 className={styles.headline}>Pronta per il tuo prossimo appuntamento?</h2>
         <p className={styles.subcopy}>
-          Pilot per i primi centri in zona: 50€ il primo mese. Dopo 30 giorni continui solo se ti
-          è utile.
+          Prenota manicure, pedicure o il tuo trattamento beauty in pochi secondi.
         </p>
 
         <div className={styles.actions}>
           <button
             type="button"
             className="btn btn-primary btn-block"
-            onClick={() => scrollTo('booking-preview')}
+            onClick={() => scrollTo('booking')}
           >
-            Prenota una demo
+            Prenota ora
           </button>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary btn-block"
-          >
-            Scrivici su WhatsApp
+          <a href={WHATSAPP_URL} className="btn btn-secondary btn-block">
+            WhatsApp
           </a>
         </div>
       </div>

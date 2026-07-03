@@ -2,11 +2,10 @@ import './App.css'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Services } from './components/Services'
-import { BookingPreview } from './components/BookingPreview'
+import { BookingForm } from './components/BookingForm'
 import { Reviews } from './components/Reviews'
-import { Reminders } from './components/Reminders'
-import { GoogleProfile } from './components/GoogleProfile'
-import { MonthlyReport } from './components/MonthlyReport'
+import { WhyBookOnline } from './components/WhyBookOnline'
+import { Location } from './components/Location'
 import { FinalCTA } from './components/FinalCTA'
 import { Footer } from './components/Footer'
 
@@ -17,11 +16,10 @@ function App() {
       <main className="page-shell">
         <Hero />
         <Services />
-        <BookingPreview />
+        <BookingForm />
         <Reviews />
-        <Reminders />
-        <GoogleProfile />
-        <MonthlyReport />
+        <WhyBookOnline />
+        <Location />
         <FinalCTA />
         <Footer />
       </main>

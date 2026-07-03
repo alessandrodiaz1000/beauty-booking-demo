@@ -129,61 +129,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-.placeholder-visual {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(145deg, #f5ede6 0%, #ede0d8 50%, #e8d5cf 100%);
-  min-height: 220px;
-}
-
-.placeholder-visual::before {
-  content: '';
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: rgba(255, 251, 248, 0.55);
-  top: -30px;
-  right: -20px;
-}
-
-.placeholder-visual::after {
-  content: '';
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: rgba(196, 132, 122, 0.18);
-  bottom: 24px;
-  left: 28px;
-}
-
-.placeholder-content {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: inherit;
-  padding: 32px 24px;
-  text-align: center;
-}
-
-.placeholder-icon {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-  opacity: 0.85;
-}
-
-.placeholder-label {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
 @media (min-width: 768px) {
   .app {
     padding-top: 12px;

@@ -36,17 +36,80 @@
   gap: 8px;
 }
 
-.visual {
-  margin-top: 8px;
+.visualCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(155deg, #f8f0ea 0%, #ede0d8 45%, #e8d5cf 100%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.heroImage {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border);
+.shapeOne {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 251, 248, 0.5);
+  top: -40px;
+  right: -30px;
+}
+
+.shapeTwo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(196, 132, 122, 0.15);
+  bottom: 20px;
+  left: 24px;
+}
+
+.logoWrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.heroLogo {
+  width: 120px;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.heroLogoFallback {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.visualTagline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0 0 4px;
+  font-style: italic;
+}
+
+.visualLocation {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+  letter-spacing: 0.04em;
 }
 
 @media (min-width: 380px) {

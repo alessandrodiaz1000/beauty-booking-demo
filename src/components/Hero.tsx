@@ -2,15 +2,22 @@ import { SafeImage } from './SafeImage'
 import { scrollTo, WHATSAPP_URL } from '../utils'
 import styles from './Hero.module.css'
 
-function HeroPlaceholder() {
+function BrandedVisual() {
   return (
-    <div className="placeholder-visual">
-      <div className="placeholder-content">
-        <span className="placeholder-icon">✨</span>
-        <span className="placeholder-label">Be-Luce Beauty Studio</span>
-        <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: 6 }}>
-          Montenero · Milano
-        </span>
+    <div className={styles.visualCard}>
+      <div className={styles.shapeOne} aria-hidden />
+      <div className={styles.shapeTwo} aria-hidden />
+      <div className={styles.logoWrap}>
+        <SafeImage
+          src="assets/logo.png"
+          alt=""
+          className={styles.heroLogo}
+          fallback={
+            <span className={styles.heroLogoFallback}>BE-LUCE</span>
+          }
+        />
+        <p className={styles.visualTagline}>Beauty Studio</p>
+        <p className={styles.visualLocation}>Montenero · Milano</p>
       </div>
     </div>
   )
@@ -20,29 +27,22 @@ export function Hero() {
   return (
     <section className={`section ${styles.hero}`}>
       <div className={styles.content}>
-        <span className="section-label">Centro beauty · Montenero</span>
         <h1 className={styles.headline}>
           Manicure, pedicure e trattamenti beauty in zona Montenero
         </h1>
         <p className={styles.subcopy}>
-          Prenota dal telefono in pochi secondi. Ricevi promemoria automatici e, dopo la visita,
-          lascia una recensione Google con un tap.
+          Cura precisa, ambiente pulito e prenotazione semplice dal telefono.
         </p>
 
         <div className={styles.actions}>
           <button
             type="button"
             className="btn btn-primary btn-block"
-            onClick={() => scrollTo('booking-preview')}
+            onClick={() => scrollTo('booking')}
           >
             Prenota ora
           </button>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary btn-block"
-          >
+          <a href={WHATSAPP_URL} className="btn btn-secondary btn-block">
             Scrivici su WhatsApp
           </a>
         </div>
@@ -50,18 +50,11 @@ export function Hero() {
         <div className={styles.trust}>
           <span className="trust-pill">⭐ 4,6 su Google</span>
           <span className="trust-pill">48 recensioni</span>
-          <span className="trust-pill">Clienti storiche in zona</span>
+          <span className="trust-pill">Manicure &amp; Pedicure</span>
         </div>
       </div>
 
-      <div className={styles.visual}>
-        <SafeImage
-          src="assets/hero-salon.jpg"
-          alt="Interno del salone Be-Luce"
-          className={styles.heroImage}
-          fallback={<HeroPlaceholder />}
-        />
-      </div>
+      <BrandedVisual />
     </section>
   )
 }
