@@ -1,0 +1,31 @@
+.cta {
+  padding-bottom: 16px;
+}
+
+.card {
+  padding: 28px 22px;
+  background: linear-gradient(160deg, var(--bg-card) 0%, var(--bg-soft) 100%);
+  text-align: center;
+}
+
+.headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  margin: 0 0 14px;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.subcopy {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
